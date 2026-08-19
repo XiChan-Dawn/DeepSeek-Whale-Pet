@@ -1,6 +1,6 @@
-# 🐋 DS Whale Pet — 鲸鱼桌面宠物（DeepSeek Harness + OpenCode）
+# 🐋 DS Whale Pet — 鲸鱼桌面宠物（DeepSeek Harness）
 
-一个自包含的 DeepSeek Harness 插件 + OpenCode 适配器：自动拉起一只**透明、置顶、无任务栏图标**的鲸鱼桌面宠物（QQ 宠物风格），通过事件流实时跟随 agent 状态（思考中 / 运行工具 / 生成中 / 完成 / 待命）切换动画。
+一个自包含的 DeepSeek Harness 插件：自动拉起一只**透明、置顶、无任务栏图标**的鲸鱼桌面宠物（QQ 宠物风格），通过事件流实时跟随 agent 状态（思考中 / 运行工具 / 生成中 / 完成 / 待命）切换动画。
 
 鲸鱼动画资源（`whale.svg` + `work-logo.css`）原样解包自 DeepSeek GUI，包含 19 组原始关键帧（波浪、水花、气泡、尾鳍独立摇摆等）。
 
@@ -11,7 +11,7 @@
 - 透明无边框置顶窗口，盖在所有应用之上，任务栏无图标（`skipTaskbar`）
 - 拖动窗口任意移动；点击状态气泡展开设置面板调大小（zoom 滑杆，自动记住）
 - 跟随 agent 状态：思考（游泳+气泡）、工具（显示工具名）、生成（全速游泳）、完成（跳跃）、暂停（回待命）
-- 单实例：多个事件源/多次重启时旧窗口复用，不会出现多个宠物
+- 单实例：多次重启时旧窗口复用，不会出现多个宠物
 
 ## 资源来源与许可
 
@@ -22,12 +22,9 @@
 - 本项目为学习/个人用途的非商业分发，如原许可证有署名要求，本声明即保留原作者版权标注；
 - 如需商用或二次分发，请先查看原项目许可证或联系原作者。
 
-## 支持的事件源
+## 事件流
 
-| 来源 | 机制 | 代码 |
-|---|---|---|
-| **DeepSeek Harness** | DSH 插件（Cordis）启动宠物 + 直连 `ws://127.0.0.1:3080/api/events.mux` | `adapters/deepseek-harness/index.js` + `desktop/main.js` |
-| **OpenCode** | OpenCode 插件订阅事件总线 → 翻译 → `POST http://127.0.0.1:3199/event` | `adapters/opencode/index.js` |
+DSH 插件（Cordis）启动宠物，宠物直连 harness 的 `ws://127.0.0.1:3080/api/events.mux`（`adapters/deepseek-harness/index.js` + `desktop/main.js`）。
 
 ## 准备 Electron（全局安装，一次性）
 
@@ -54,33 +51,11 @@ dsh --profile web
 
 > 依赖 pnpm（`npm install -g pnpm`）。
 
-## OpenCode 安装
-
-```bash
-# 1. 克隆仓库（或直接下载源码）
-git clone https://github.com/XiChan-Dawn/DeepSeek-Whale-Pet.git
-
-# 2. 安装 OpenCode 适配插件（指向本仓库的 adapters/opencode 目录；也可把该目录单独发 npm/git 包）
-opencode plugin add DeepSeek-Whale-Pet/adapters/opencode
-```
-
-插件加载时会自动拉起桌面宠物并订阅 OpenCode 事件总线，无需其它配置。事件映射：
-
-| OpenCode 事件 | 宠物状态 |
-|---|---|
-| `session.created` | 思考中… |
-| `message.part.updated`（流式，节流） | 生成中… |
-| `file.edited` | 运行 edit |
-| `permission.updated` | 等你确认… |
-| `session.updated` / `session.status` 含 completed | 搞定 ✨ |
-| `session.error` | 已暂停 |
-
 ## 卸载
 
 ```powershell
 dsh plugin --profile web remove @deepseek-ai/ds-whale-pet
 # 并从 cordis.patch.yml 删除启用行
-# （可选）opencode plugin remove ds-whale-pet-opencode
 # （可选）npm uninstall -g electron
 ```
 
@@ -88,9 +63,8 @@ dsh plugin --profile web remove @deepseek-ai/ds-whale-pet
 
 ```
 DeepSeek-Whale-Pet/          # 包里只有宠物本身（~1.5MB），零依赖
-├── adapters/             # 各 harness 适配器（与 desktop 平级，新增适配都放这里）
-│   ├── deepseek-harness/ # DeepSeek Harness 适配（Cordis 插件，拉起宠物）
-│   └── opencode/         # OpenCode 适配插件（订阅事件 → 推送宠物）
+├── adapters/
+│   └── deepseek-harness/ # DeepSeek Harness 适配（Cordis 插件，拉起宠物）
 ├── desktop/              # 桌面宠物应用（透明置顶窗口，动画 + 状态机 + HTTP 事件入口）
 ├── whale-pet-assets/     # 原始动画资源（whale.svg、work-logo.css、demo）
 ├── package.json          # 无 dependencies，安装不下载任何东西

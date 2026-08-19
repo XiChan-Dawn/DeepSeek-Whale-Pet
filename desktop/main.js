@@ -52,7 +52,7 @@ function connect() {
   ws.onerror = () => { try { ws.close(); } catch {} };
 }
 
-// 本地 HTTP 事件入口（OpenCode 等其它 harness 的适配器用）：
+// 本地 HTTP 事件入口（其它事件源/调试用）：
 // POST /event  body: {"type":"turn/start","data":{...}}
 // 包装成 mux 帧格式 {payload:{event:{type,data}}} 送给页面，与 DSH 共用同一套状态机。
 function startHttpInlet() {

@@ -4,7 +4,7 @@
  * Cordis plugin for DeepSeek Harness: launches the always-on-top DESKTOP pet
  * (an Electron window running the app in desktop/) and the pet connects
  * directly to the harness /api/events.mux stream. This file only runs inside
- * the harness; the OpenCode adapter lives in ../opencode.
+ * the harness.
  *
  * Installing this plugin downloads NOTHING: package.json declares no
  * dependencies. Electron is installed globally by the user (npm i -g
