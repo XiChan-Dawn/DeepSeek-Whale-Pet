@@ -1,0 +1,1237 @@
+/* extracted ds-work-logo animation rules from DeepSeek GUI app CSS */
+
+
+.ds-work-logo {
+  --work-logo-duration: 2.06s;
+  --work-logo-body-duration: 1.03s;
+  --work-logo-tail-duration: 0.54s;
+  --work-logo-track-delay: 0s;
+  --work-logo-body-delay: -0.05s;
+  --work-logo-tail-delay: -0.16s;
+  --work-logo-swell-delay: -0.04s;
+  --work-logo-wave-back-delay: -0.2s;
+  --work-logo-wave-front-delay: -0.62s;
+  --work-logo-breaker-delay: -0.16s;
+  --work-logo-crest-delay: -0.22s;
+  --work-logo-splash-delay: -0.1s;
+  --work-logo-spray-delay: -0.36s;
+  --work-logo-gust-delay: -0.3s;
+  --work-logo-current-delay: -0.34s;
+  --work-logo-ripple-delay: -0.82s;
+  --work-logo-wake-delay: -0.12s;
+  --work-logo-foam-delay: -0.3s;
+  --work-logo-waterline-delay: -0.08s;
+  --work-logo-bubble-delay: -0.56s;
+  --work-logo-shadow-delay: -0.18s;
+  --work-logo-echo-delay: -0.42s;
+  --work-logo-path-start: 1.8px, 0.7px;
+  --work-logo-path-rise: 0.42px, -1.15px;
+  --work-logo-path-glide: -1.95px, -0.22px;
+  --work-logo-path-dip: -0.38px, 1.05px;
+  --work-logo-path-return: 1.35px, 0.36px;
+  --work-logo-effect-scale: 1;
+  --work-logo-swell-peak-opacity: 0.38;
+  --work-logo-wave-back-peak-opacity: 0.46;
+  --work-logo-wave-front-peak-opacity: 0.62;
+  --work-logo-breaker-peak-opacity: 0.68;
+  --work-logo-crest-peak-opacity: 0.74;
+  --work-logo-splash-peak-opacity: 0.72;
+  --work-logo-spray-peak-opacity: 0.66;
+  --work-logo-gust-peak-opacity: 0.5;
+  --work-logo-foam-peak-opacity: 0.46;
+  --work-logo-waterline-peak-opacity: 0.72;
+  --work-logo-wake-mid: 7px, 0.5px;
+  --work-logo-wake-end: 10px, 0;
+  --work-logo-bubble-mid: 5.8px, -3px;
+  --work-logo-bubble-end: 7px, -4px;
+  --work-logo-current-mid: -1px, 0.2px;
+  --work-logo-current-end: 2px, 0;
+  --work-logo-ripple-mid: 3px, 0.2px;
+  --work-logo-ripple-end: 9px, 0;
+  --work-logo-water: rgba(77, 107, 254, 0.24);
+  --work-logo-water-soft: rgba(77, 107, 254, 0.12);
+  --work-logo-water-glint: rgba(45, 212, 191, 0.18);
+  --work-logo-water-glint-soft: rgba(45, 212, 191, 0.1);
+  --work-logo-wave-crest: rgba(77, 107, 254, 0.22);
+  --work-logo-wave-foam: rgba(255, 255, 255, 0.8);
+  --work-logo-current-core: rgba(77, 107, 254, 0.18);
+  --work-logo-current-strong: rgba(77, 107, 254, 0.16);
+  --work-logo-current-soft: rgba(77, 107, 254, 0.08);
+  --work-logo-ripple-strong: rgba(77, 107, 254, 0.14);
+  --work-logo-ripple-soft: rgba(77, 107, 254, 0.1);
+  --work-logo-splash-strong: rgba(77, 107, 254, 0.46);
+  --work-logo-splash-soft: rgba(77, 107, 254, 0.22);
+  --work-logo-bubble-strong: rgba(77, 107, 254, 0.36);
+  --work-logo-bubble-soft: rgba(77, 107, 254, 0.22);
+  --work-logo-wind: rgba(77, 107, 254, 0.22);
+  --work-logo-wind-soft: rgba(77, 107, 254, 0.1);
+  --work-logo-shadow-color: rgba(77, 107, 254, 0.2);
+  --work-logo-glow: rgba(77, 107, 254, 0.22);
+  --work-logo-echo-glow: rgba(77, 107, 254, 0.12);
+  position: relative;
+  display: inline-flex;
+  flex: 0 0 auto;
+  align-items: center;
+  contain: layout style;
+  justify-content: center;
+  isolation: isolate;
+  line-height: 0;
+  overflow: visible;
+  transform: translateZ(0);
+}
+
+
+.ds-work-logo-sm {
+  --work-logo-path-start: 1.5px, 0.58px;
+  --work-logo-path-rise: 0.35px, -0.95px;
+  --work-logo-path-glide: -1.65px, -0.18px;
+  --work-logo-path-dip: -0.32px, 0.86px;
+  --work-logo-path-return: 1.15px, 0.3px;
+  --work-logo-effect-scale: 0.86;
+  --work-logo-swell-peak-opacity: 0.32;
+  --work-logo-wave-back-peak-opacity: 0.38;
+  --work-logo-wave-front-peak-opacity: 0.5;
+  --work-logo-breaker-peak-opacity: 0.5;
+  --work-logo-crest-peak-opacity: 0.56;
+  --work-logo-splash-peak-opacity: 0.54;
+  --work-logo-spray-peak-opacity: 0.48;
+  --work-logo-gust-peak-opacity: 0.38;
+  --work-logo-foam-peak-opacity: 0.34;
+  --work-logo-waterline-peak-opacity: 0.52;
+  --work-logo-wake-mid: 6px, 0.5px;
+  --work-logo-wake-end: 8.7px, 0;
+  --work-logo-bubble-mid: 4.9px, -2.6px;
+  --work-logo-bubble-end: 6px, -3.5px;
+  --work-logo-current-mid: -0.8px, 0.2px;
+  --work-logo-current-end: 1.6px, 0;
+  --work-logo-ripple-mid: 2.5px, 0.2px;
+  --work-logo-ripple-end: 7.7px, 0;
+  height: 15px;
+  width: 22px;
+}
+
+
+.ds-work-logo-md {
+  --work-logo-path-start: 2.1px, 0.82px;
+  --work-logo-path-rise: 0.5px, -1.35px;
+  --work-logo-path-glide: -2.25px, -0.25px;
+  --work-logo-path-dip: -0.46px, 1.2px;
+  --work-logo-path-return: 1.55px, 0.42px;
+  --work-logo-effect-scale: 1.04;
+  --work-logo-wake-mid: 8px, 0.5px;
+  --work-logo-wake-end: 11.6px, 0;
+  --work-logo-bubble-mid: 6.6px, -3.2px;
+  --work-logo-bubble-end: 8px, -4.4px;
+  --work-logo-current-mid: -1.2px, 0.2px;
+  --work-logo-current-end: 2.4px, 0;
+  --work-logo-ripple-mid: 3.4px, 0.2px;
+  --work-logo-ripple-end: 10.4px, 0;
+  height: 18px;
+  width: 26px;
+}
+
+
+.ds-work-logo-phase-trail {
+  --work-logo-track-delay: -0.44s;
+  --work-logo-body-delay: -0.28s;
+  --work-logo-tail-delay: -0.39s;
+  --work-logo-swell-delay: -0.5s;
+  --work-logo-wave-back-delay: -0.72s;
+  --work-logo-wave-front-delay: -1.03s;
+  --work-logo-breaker-delay: -0.66s;
+  --work-logo-crest-delay: -0.72s;
+  --work-logo-splash-delay: -0.58s;
+  --work-logo-spray-delay: -0.86s;
+  --work-logo-gust-delay: -0.72s;
+  --work-logo-current-delay: -0.78s;
+  --work-logo-ripple-delay: -1.2s;
+  --work-logo-wake-delay: -0.5s;
+  --work-logo-foam-delay: -0.8s;
+  --work-logo-waterline-delay: -0.5s;
+  --work-logo-bubble-delay: -0.94s;
+  --work-logo-shadow-delay: -0.54s;
+  --work-logo-echo-delay: -0.86s;
+}
+
+
+[data-theme='dark'] .ds-work-logo {
+  --work-logo-water: rgba(135, 170, 255, 0.34);
+  --work-logo-water-soft: rgba(135, 170, 255, 0.18);
+  --work-logo-water-glint: rgba(94, 234, 212, 0.22);
+  --work-logo-water-glint-soft: rgba(94, 234, 212, 0.13);
+  --work-logo-wave-crest: rgba(145, 180, 255, 0.28);
+  --work-logo-wave-foam: rgba(226, 238, 255, 0.72);
+  --work-logo-current-core: rgba(135, 170, 255, 0.25);
+  --work-logo-current-strong: rgba(135, 170, 255, 0.22);
+  --work-logo-current-soft: rgba(135, 170, 255, 0.11);
+  --work-logo-ripple-strong: rgba(135, 170, 255, 0.2);
+  --work-logo-ripple-soft: rgba(135, 170, 255, 0.14);
+  --work-logo-splash-strong: rgba(155, 190, 255, 0.54);
+  --work-logo-splash-soft: rgba(155, 190, 255, 0.3);
+  --work-logo-bubble-strong: rgba(145, 180, 255, 0.46);
+  --work-logo-bubble-soft: rgba(145, 180, 255, 0.28);
+  --work-logo-wind: rgba(155, 190, 255, 0.28);
+  --work-logo-wind-soft: rgba(155, 190, 255, 0.14);
+  --work-logo-shadow-color: rgba(135, 170, 255, 0.24);
+  --work-logo-glow: rgba(135, 170, 255, 0.32);
+  --work-logo-echo-glow: rgba(135, 170, 255, 0.18);
+}
+
+
+.ds-work-logo-slot {
+  display: flex;
+  flex: 0 0 auto;
+  align-items: center;
+  justify-content: center;
+  overflow: visible;
+}
+
+
+.ds-work-logo-slot-sm {
+  height: 15px;
+  width: 22px;
+}
+
+
+.ds-work-logo-slot-md {
+  height: 18px;
+  width: 26px;
+}
+
+
+.ds-claw-empty-whale-logo.ds-work-logo {
+  transform: translateZ(0) scale(2.35);
+}
+
+
+.ds-work-logo-gust {
+  position: absolute;
+  top: 1px;
+  right: 3px;
+  left: -7px;
+  z-index: 0;
+  height: 13px;
+  background:
+    linear-gradient(160deg, transparent 0 16%, var(--work-logo-wind-soft) 18% 23%, transparent 25% 100%),
+    linear-gradient(160deg, transparent 0 38%, var(--work-logo-wind) 40% 46%, transparent 48% 100%),
+    linear-gradient(160deg, transparent 0 61%, var(--work-logo-wind-soft) 63% 68%, transparent 70% 100%);
+  filter: blur(0.25px);
+  opacity: 0;
+  transform: translate3d(5px, 2px, 0) rotate(-3deg) scaleX(0.58);
+  transform-origin: right center;
+  pointer-events: none;
+  scale: var(--work-logo-effect-scale);
+}
+
+
+.ds-work-logo-current {
+  position: absolute;
+  right: -3px;
+  bottom: -2px;
+  left: -3px;
+  height: 8px;
+  border-radius: 999px;
+  background:
+    radial-gradient(ellipse at 68% 50%, var(--work-logo-current-core) 0 12%, transparent 44%),
+    linear-gradient(110deg, transparent 0%, var(--work-logo-current-strong) 34%, var(--work-logo-current-soft) 53%, transparent 76%);
+  filter: blur(0.35px);
+  opacity: 0;
+  transform: translate3d(-2px, 0.5px, 0) scaleX(0.72);
+  transform-origin: center;
+  pointer-events: none;
+}
+
+
+.ds-work-logo-swell {
+  position: absolute;
+  right: -7px;
+  bottom: -6px;
+  left: -7px;
+  z-index: 0;
+  height: 14px;
+  border-radius: 999px;
+  background:
+    radial-gradient(ellipse at 24% 24%, var(--work-logo-wave-foam) 0 7%, transparent 28%),
+    radial-gradient(ellipse at 70% 34%, var(--work-logo-water-glint-soft) 0 10%, transparent 34%),
+    radial-gradient(ellipse at 48% 40%, var(--work-logo-water) 0 16%, transparent 48%),
+    linear-gradient(104deg, transparent 0%, var(--work-logo-water-soft) 24%, var(--work-logo-wave-crest) 54%, transparent 84%);
+  filter: blur(0.35px);
+  opacity: 0;
+  transform: translate3d(-5px, 1.5px, 0) scaleX(0.48);
+  transform-origin: left center;
+  pointer-events: none;
+  scale: var(--work-logo-effect-scale);
+}
+
+
+.ds-work-logo-wave {
+  position: absolute;
+  z-index: 0;
+  border-radius: 999px;
+  opacity: 0;
+  pointer-events: none;
+  transform-origin: left center;
+  scale: var(--work-logo-effect-scale);
+}
+
+
+.ds-work-logo-wave-back {
+  right: -7px;
+  bottom: -3px;
+  left: -6px;
+  height: 10px;
+  background:
+    radial-gradient(ellipse at 28% 30%, var(--work-logo-wave-foam) 0 9%, transparent 30%),
+    radial-gradient(ellipse at 42% 48%, var(--work-logo-water-glint-soft) 0 10%, transparent 34%),
+    radial-gradient(ellipse at 58% 42%, var(--work-logo-wave-crest) 0 15%, transparent 39%),
+    linear-gradient(100deg, transparent 3%, var(--work-logo-water-soft) 28%, var(--work-logo-water) 52%, transparent 82%);
+  filter: blur(0.2px);
+  transform: translate3d(-4px, 1px, 0) scaleX(0.58);
+}
+
+
+.ds-work-logo-wave-front {
+  right: -9px;
+  bottom: -4px;
+  left: 1px;
+  height: 8px;
+  background:
+    radial-gradient(ellipse at 26% 22%, var(--work-logo-wave-foam) 0 8%, transparent 26%),
+    radial-gradient(ellipse at 68% 42%, var(--work-logo-wave-foam) 0 7%, transparent 25%),
+    linear-gradient(96deg, transparent 0%, var(--work-logo-wave-crest) 26%, var(--work-logo-water-glint) 42%, var(--work-logo-water-soft) 62%, transparent 88%);
+  filter: blur(0.12px);
+  transform: translate3d(-2px, 1px, 0) scaleX(0.45);
+}
+
+
+.ds-work-logo-breaker {
+  position: absolute;
+  right: -6px;
+  bottom: 1px;
+  z-index: 2;
+  width: 15px;
+  height: 12px;
+  background:
+    radial-gradient(ellipse at 24% 52%, var(--work-logo-wave-foam) 0 10%, transparent 35%),
+    radial-gradient(ellipse at 48% 66%, var(--work-logo-splash-soft) 0 18%, transparent 42%),
+    linear-gradient(132deg, transparent 0 21%, var(--work-logo-water-glint-soft) 23% 29%, var(--work-logo-wave-foam) 31% 42%, transparent 48% 100%);
+  filter: blur(0.08px);
+  opacity: 0;
+  transform: translate3d(-1.6px, 1.5px, 0) rotate(-18deg) scale(0.58);
+  transform-origin: left bottom;
+  pointer-events: none;
+  scale: var(--work-logo-effect-scale);
+}
+
+
+.ds-work-logo-ripple {
+  position: absolute;
+  right: -6px;
+  bottom: -3px;
+  left: -2px;
+  height: 10px;
+  border-radius: 999px;
+  background:
+    linear-gradient(104deg, transparent 5%, var(--work-logo-ripple-soft) 28%, transparent 48%),
+    linear-gradient(96deg, transparent 18%, var(--work-logo-ripple-strong) 45%, transparent 72%);
+  filter: blur(0.45px);
+  opacity: 0;
+  transform: translate3d(-3px, 0.8px, 0) scaleX(0.55);
+  transform-origin: left center;
+  pointer-events: none;
+}
+
+
+.ds-work-logo-wake {
+  position: absolute;
+  right: -5px;
+  bottom: -1px;
+  width: 14px;
+  height: 6px;
+  border-radius: 999px;
+  background:
+    radial-gradient(circle at 84% 42%, var(--work-logo-water) 0 1px, transparent 1.25px),
+    radial-gradient(circle at 58% 58%, var(--work-logo-water-soft) 0 1.1px, transparent 1.35px),
+    linear-gradient(90deg, transparent, var(--work-logo-water-soft), transparent);
+  filter: blur(0.2px);
+  opacity: 0;
+  transform: translate3d(0, 1px, 0) scaleX(0.55);
+  transform-origin: left center;
+  pointer-events: none;
+}
+
+
+.ds-work-logo-foam {
+  position: absolute;
+  right: -8px;
+  bottom: -2px;
+  z-index: 2;
+  width: 18px;
+  height: 7px;
+  background:
+    radial-gradient(circle, var(--work-logo-wave-foam) 0 0.62px, transparent 0.86px) 18% 46% / 4px 4px no-repeat,
+    radial-gradient(circle, var(--work-logo-splash-soft) 0 0.72px, transparent 0.96px) 44% 62% / 4px 4px no-repeat,
+    radial-gradient(circle, var(--work-logo-wave-foam) 0 0.58px, transparent 0.84px) 72% 42% / 4px 4px no-repeat,
+    linear-gradient(96deg, transparent 0%, var(--work-logo-water-soft) 28%, var(--work-logo-water-glint-soft) 42%, var(--work-logo-wave-foam) 54%, transparent 82%);
+  filter: blur(0.14px);
+  opacity: 0;
+  transform: translate3d(1px, 0.8px, 0) rotate(-4deg) scaleX(0.48);
+  transform-origin: right center;
+  pointer-events: none;
+  scale: var(--work-logo-effect-scale);
+}
+
+
+.ds-work-logo-crest {
+  position: absolute;
+  right: -4px;
+  bottom: 0;
+  z-index: 2;
+  width: 13px;
+  height: 9px;
+  border-radius: 999px;
+  background:
+    radial-gradient(ellipse at 26% 34%, var(--work-logo-wave-foam) 0 13%, transparent 36%),
+    radial-gradient(ellipse at 58% 64%, var(--work-logo-splash-soft) 0 18%, transparent 42%),
+    linear-gradient(126deg, transparent 8%, var(--work-logo-water-glint-soft) 28%, var(--work-logo-wave-foam) 40%, transparent 68%);
+  filter: blur(0.08px);
+  opacity: 0;
+  transform: translate3d(-1px, 1.2px, 0) rotate(-12deg) scale(0.64);
+  transform-origin: left bottom;
+  pointer-events: none;
+  scale: var(--work-logo-effect-scale);
+}
+
+
+.ds-work-logo-splash {
+  position: absolute;
+  right: -5px;
+  bottom: 3px;
+  z-index: 2;
+  width: 13px;
+  height: 12px;
+  background:
+    radial-gradient(circle, var(--work-logo-wave-foam) 0 0.8px, transparent 1.05px) 12% 54% / 4px 4px no-repeat,
+    radial-gradient(circle, var(--work-logo-splash-strong) 0 1px, transparent 1.28px) 42% 22% / 5px 5px no-repeat,
+    radial-gradient(circle, var(--work-logo-splash-soft) 0 0.9px, transparent 1.2px) 76% 62% / 5px 5px no-repeat,
+    linear-gradient(130deg, transparent 12%, var(--work-logo-wave-foam) 42%, transparent 66%);
+  opacity: 0;
+  transform: translate3d(-1px, 2px, 0) rotate(-14deg) scale(0.68);
+  transform-origin: left bottom;
+  pointer-events: none;
+  scale: var(--work-logo-effect-scale);
+}
+
+
+.ds-work-logo-spray {
+  position: absolute;
+  right: -9px;
+  bottom: 6px;
+  z-index: 2;
+  width: 16px;
+  height: 13px;
+  background:
+    radial-gradient(circle, var(--work-logo-wave-foam) 0 0.78px, transparent 1px) 16% 70% / 4px 4px no-repeat,
+    radial-gradient(circle, var(--work-logo-splash-strong) 0 0.85px, transparent 1.1px) 42% 30% / 4px 4px no-repeat,
+    radial-gradient(circle, var(--work-logo-splash-soft) 0 0.78px, transparent 1px) 72% 16% / 4px 4px no-repeat,
+    radial-gradient(circle, var(--work-logo-splash-soft) 0 0.7px, transparent 0.95px) 86% 62% / 4px 4px no-repeat;
+  opacity: 0;
+  transform: translate3d(-1px, 2px, 0) rotate(-8deg) scale(0.7);
+  transform-origin: left bottom;
+  pointer-events: none;
+  scale: var(--work-logo-effect-scale);
+}
+
+
+.ds-work-logo-bubbles {
+  position: absolute;
+  top: 1px;
+  right: -4px;
+  width: 10px;
+  height: 9px;
+  background:
+    radial-gradient(circle, var(--work-logo-bubble-strong) 0 1px, transparent 1.25px) 64% 14% / 5px 5px no-repeat,
+    radial-gradient(circle, var(--work-logo-bubble-soft) 0 0.9px, transparent 1.15px) 20% 58% / 5px 5px no-repeat;
+  opacity: 0;
+  transform: translate3d(0, 2px, 0) scale(0.72);
+  pointer-events: none;
+  scale: var(--work-logo-effect-scale);
+}
+
+
+.ds-work-logo::after {
+  position: absolute;
+  right: 2px;
+  bottom: -1px;
+  left: 3px;
+  height: 5px;
+  border-radius: 999px;
+  background: var(--work-logo-shadow-color);
+  content: '';
+  filter: blur(3.5px);
+  opacity: 0.24;
+  transform: translateY(3px) scaleX(0.78);
+}
+
+
+.ds-work-logo-track {
+  position: relative;
+  z-index: 1;
+  display: block;
+  height: 100%;
+  width: 100%;
+  transform-origin: 52% 58%;
+  line-height: 0;
+}
+
+
+.ds-work-logo-body {
+  position: relative;
+  display: block;
+  height: 100%;
+  width: 100%;
+  transform: translateZ(0);
+  transform-origin: 58% 62%;
+  line-height: 0;
+}
+
+
+.ds-work-logo-body::after {
+  position: absolute;
+  right: 1px;
+  bottom: 2px;
+  left: 1px;
+  z-index: 2;
+  height: 5px;
+  border-radius: 999px;
+  background:
+    radial-gradient(ellipse at 30% 30%, var(--work-logo-wave-foam) 0 12%, transparent 38%),
+    linear-gradient(95deg, transparent 2%, var(--work-logo-water-soft) 24%, var(--work-logo-water-glint-soft) 44%, var(--work-logo-wave-foam) 58%, transparent 88%);
+  content: '';
+  filter: blur(0.12px);
+  opacity: 0;
+  transform: translate3d(-1px, 1px, 0) scaleX(0.58);
+  transform-origin: left center;
+  pointer-events: none;
+}
+
+
+.ds-work-logo-echo {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  display: block;
+  height: 100%;
+  width: 100%;
+  -o-object-fit: contain;
+     object-fit: contain;
+  opacity: 0;
+  filter: blur(0.55px) drop-shadow(0 3px 6px var(--work-logo-echo-glow));
+  transform: translate3d(0, 0, 0) rotate(-4deg) scale(0.98);
+  transform-origin: 64% 58%;
+  pointer-events: none;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+          user-select: none;
+}
+
+
+.ds-work-logo-image {
+  display: block;
+  height: 100%;
+  width: 100%;
+  -o-object-fit: contain;
+     object-fit: contain;
+  filter: drop-shadow(0 4px 7px var(--work-logo-glow));
+  backface-visibility: hidden;
+  pointer-events: none;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+          user-select: none;
+}
+
+
+.ds-work-logo.is-active .ds-work-logo-image {
+  clip-path: polygon(0 0, 59% 0, 59% 22%, 82% 52%, 82% 70%, 100% 70%, 100% 100%, 0 100%);
+}
+
+
+.ds-work-logo-tail {
+  position: absolute;
+  inset: 0;
+  display: block;
+  height: 100%;
+  width: 100%;
+  backface-visibility: hidden;
+  clip-path: polygon(58% 0%, 100% 0%, 100% 55%, 70% 50%, 70% 30%);
+  filter: drop-shadow(0 3px 5px var(--work-logo-glow));
+  -o-object-fit: contain;
+     object-fit: contain;
+  opacity: 0;
+  transform: translateZ(0);
+  transform-origin: 78% 30%;
+  pointer-events: none;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+          user-select: none;
+}
+
+
+.ds-work-logo.is-active .ds-work-logo-current {
+  animation: ds-work-logo-current var(--work-logo-duration) ease-in-out infinite;
+  animation-delay: var(--work-logo-current-delay);
+}
+
+
+.ds-work-logo.is-active .ds-work-logo-gust {
+  animation: ds-work-logo-gust var(--work-logo-duration) ease-out infinite;
+  animation-delay: var(--work-logo-gust-delay);
+  will-change: opacity, transform;
+}
+
+
+.ds-work-logo.is-active .ds-work-logo-swell {
+  animation: ds-work-logo-swell var(--work-logo-duration) ease-out infinite;
+  animation-delay: var(--work-logo-swell-delay);
+  will-change: opacity, transform;
+}
+
+
+.ds-work-logo.is-active .ds-work-logo-wave-back {
+  animation: ds-work-logo-wave-back var(--work-logo-duration) ease-out infinite;
+  animation-delay: var(--work-logo-wave-back-delay);
+  will-change: opacity, transform;
+}
+
+
+.ds-work-logo.is-active .ds-work-logo-ripple {
+  animation: ds-work-logo-ripple var(--work-logo-duration) ease-out infinite;
+  animation-delay: var(--work-logo-ripple-delay);
+}
+
+
+.ds-work-logo.is-active .ds-work-logo-wave-front {
+  animation: ds-work-logo-wave-front var(--work-logo-duration) ease-out infinite;
+  animation-delay: var(--work-logo-wave-front-delay);
+  will-change: opacity, transform;
+}
+
+
+.ds-work-logo.is-active .ds-work-logo-breaker {
+  animation: ds-work-logo-breaker var(--work-logo-duration) ease-out infinite;
+  animation-delay: var(--work-logo-breaker-delay);
+  will-change: opacity, transform;
+}
+
+
+.ds-work-logo.is-active .ds-work-logo-wake {
+  animation: ds-work-logo-wake var(--work-logo-duration) ease-out infinite;
+  animation-delay: var(--work-logo-wake-delay);
+}
+
+
+.ds-work-logo.is-active .ds-work-logo-foam {
+  animation: ds-work-logo-foam var(--work-logo-duration) ease-out infinite;
+  animation-delay: var(--work-logo-foam-delay);
+  will-change: opacity, transform;
+}
+
+
+.ds-work-logo.is-active .ds-work-logo-crest {
+  animation: ds-work-logo-crest var(--work-logo-duration) ease-out infinite;
+  animation-delay: var(--work-logo-crest-delay);
+  will-change: opacity, transform;
+}
+
+
+.ds-work-logo.is-active .ds-work-logo-splash {
+  animation: ds-work-logo-splash var(--work-logo-duration) ease-out infinite;
+  animation-delay: var(--work-logo-splash-delay);
+  will-change: opacity, transform;
+}
+
+
+.ds-work-logo.is-active .ds-work-logo-spray {
+  animation: ds-work-logo-spray var(--work-logo-duration) ease-out infinite;
+  animation-delay: var(--work-logo-spray-delay);
+  will-change: opacity, transform;
+}
+
+
+.ds-work-logo.is-active .ds-work-logo-bubbles {
+  animation: ds-work-logo-bubbles var(--work-logo-duration) ease-in-out infinite;
+  animation-delay: var(--work-logo-bubble-delay);
+}
+
+
+.ds-work-logo.is-active::after {
+  animation: ds-work-logo-shadow var(--work-logo-duration) ease-in-out infinite;
+  animation-delay: var(--work-logo-shadow-delay);
+}
+
+
+.ds-work-logo.is-active .ds-work-logo-track {
+  animation: ds-work-logo-path var(--work-logo-duration) cubic-bezier(0.42, 0, 0.2, 1) infinite;
+  animation-delay: var(--work-logo-track-delay);
+  will-change: transform;
+}
+
+
+.ds-work-logo.is-active .ds-work-logo-echo {
+  animation: ds-work-logo-echo var(--work-logo-duration) ease-out infinite;
+  animation-delay: var(--work-logo-echo-delay);
+  will-change: opacity, transform;
+}
+
+
+.ds-work-logo.is-active .ds-work-logo-body {
+  animation: ds-work-logo-body var(--work-logo-body-duration) ease-in-out infinite alternate;
+  animation-delay: var(--work-logo-body-delay);
+  will-change: transform;
+}
+
+
+.ds-work-logo.is-active .ds-work-logo-body::after {
+  animation: ds-work-logo-waterline var(--work-logo-duration) ease-out infinite;
+  animation-delay: var(--work-logo-waterline-delay);
+  will-change: opacity, transform;
+}
+
+
+.ds-work-logo.is-active .ds-work-logo-tail {
+  animation: ds-work-logo-tail var(--work-logo-tail-duration) ease-in-out infinite;
+  animation-delay: var(--work-logo-tail-delay);
+  will-change: opacity, transform;
+}
+
+
+@keyframes ds-work-logo-path {
+  0% {
+    transform: translate3d(var(--work-logo-path-start), 0) rotate(-3.6deg);
+    animation-timing-function: cubic-bezier(0.36, 0, 0.28, 1);
+  }
+  15% {
+    transform: translate3d(var(--work-logo-path-rise), 0) rotate(4.6deg);
+    animation-timing-function: cubic-bezier(0.18, 0.86, 0.28, 1);
+  }
+  37% {
+    transform: translate3d(var(--work-logo-path-glide), 0) rotate(-2.2deg);
+    animation-timing-function: cubic-bezier(0.42, 0, 0.32, 1);
+  }
+  66% {
+    transform: translate3d(var(--work-logo-path-dip), 0) rotate(2.8deg);
+    animation-timing-function: cubic-bezier(0.2, 0.72, 0.34, 1);
+  }
+  84% {
+    transform: translate3d(var(--work-logo-path-return), 0) rotate(-1.1deg);
+    animation-timing-function: cubic-bezier(0.4, 0, 0.28, 1);
+  }
+  100% {
+    transform: translate3d(var(--work-logo-path-start), 0) rotate(-3.6deg);
+  }
+}
+
+
+@keyframes ds-work-logo-body {
+  0% {
+    transform: translate3d(0, 0.38px, 0) rotate(-3.2deg) skewX(-1.5deg) scaleX(0.988) scaleY(1.012);
+  }
+  28% {
+    transform: translate3d(0.2px, -0.55px, 0) rotate(3.4deg) skewX(2deg) scaleX(1.022) scaleY(0.986);
+  }
+  60% {
+    transform: translate3d(-0.16px, 0.2px, 0) rotate(-1.8deg) skewX(-0.9deg) scaleX(1.008) scaleY(0.998);
+  }
+  82% {
+    transform: translate3d(0.08px, -0.08px, 0) rotate(1.2deg) skewX(0.8deg) scaleX(1.006) scaleY(0.996);
+  }
+  100% {
+    transform: translate3d(0, 0.32px, 0) rotate(3deg) skewX(1.8deg) scaleX(0.994) scaleY(1.006);
+  }
+}
+
+
+@keyframes ds-work-logo-gust {
+  0% {
+    opacity: 0;
+    transform: translate3d(5px, 2px, 0) rotate(-3deg) scaleX(0.48);
+  }
+  22% {
+    opacity: var(--work-logo-gust-peak-opacity);
+  }
+  56% {
+    opacity: 0.24;
+    transform: translate3d(-2px, -0.4px, 0) rotate(-8deg) scaleX(1.05);
+  }
+  100% {
+    opacity: 0;
+    transform: translate3d(-8px, -1.6px, 0) rotate(-11deg) scaleX(1.35);
+  }
+}
+
+
+@keyframes ds-work-logo-tail {
+  0%,
+  100% {
+    opacity: 0.84;
+    transform: translate3d(0.08px, 0.08px, 0) rotate(-12deg) skewX(-4deg) scaleX(0.982);
+  }
+  18% {
+    opacity: 0.58;
+    transform: translate3d(-0.32px, -0.22px, 0) rotate(17deg) skewX(5.4deg) scaleX(1.058);
+  }
+  42% {
+    opacity: 0.88;
+    transform: translate3d(0.12px, 0.14px, 0) rotate(-14deg) skewX(-5.4deg) scaleX(0.988);
+  }
+  68% {
+    opacity: 0.66;
+    transform: translate3d(-0.2px, -0.1px, 0) rotate(10deg) skewX(3deg) scaleX(1.028);
+  }
+  86% {
+    opacity: 0.8;
+    transform: translate3d(0.04px, 0.02px, 0) rotate(-5deg) skewX(-2deg) scaleX(0.996);
+  }
+}
+
+
+@keyframes ds-work-logo-waterline {
+  0%,
+  8% {
+    opacity: 0;
+    transform: translate3d(-1px, 1px, 0) rotate(-2deg) scaleX(0.54);
+  }
+  22% {
+    opacity: var(--work-logo-waterline-peak-opacity);
+    transform: translate3d(-0.2px, 0.2px, 0) rotate(1deg) scaleX(0.9);
+  }
+  50% {
+    opacity: 0.46;
+    transform: translate3d(1px, 0, 0) rotate(-1deg) scaleX(1.06);
+  }
+  78% {
+    opacity: 0.24;
+    transform: translate3d(2.4px, 0.4px, 0) rotate(-3deg) scaleX(0.86);
+  }
+  100% {
+    opacity: 0;
+    transform: translate3d(3.4px, 0.7px, 0) rotate(-4deg) scaleX(0.58);
+  }
+}
+
+
+@keyframes ds-work-logo-echo {
+  0% {
+    opacity: 0;
+    transform: translate3d(1px, 0.5px, 0) rotate(-3deg) scale(0.99);
+  }
+  18% {
+    opacity: 0.18;
+  }
+  46% {
+    opacity: 0.08;
+    transform: translate3d(-3.1px, 0.1px, 0) rotate(-6deg) scale(0.96);
+  }
+  100% {
+    opacity: 0;
+    transform: translate3d(-5.6px, -0.35px, 0) rotate(-8deg) scale(0.93);
+  }
+}
+
+
+@keyframes ds-work-logo-shadow {
+  0% {
+    opacity: 0.26;
+    transform: translate3d(-1px, 3px, 0) scaleX(0.58);
+  }
+  20% {
+    opacity: 0.34;
+    transform: translate3d(0.5px, 3px, 0) scaleX(0.88);
+  }
+  54% {
+    opacity: 0.5;
+    transform: translate3d(1.2px, 3px, 0) scaleX(1.12);
+  }
+  100% {
+    opacity: 0.26;
+    transform: translate3d(-1px, 3px, 0) scaleX(0.58);
+  }
+}
+
+
+@keyframes ds-work-logo-current {
+  0% {
+    opacity: 0.28;
+    transform: translate3d(-2px, 0.5px, 0) scaleX(0.66);
+  }
+  34% {
+    opacity: 0.54;
+    transform: translate3d(var(--work-logo-current-mid), 0) scaleX(1.04);
+  }
+  72% {
+    opacity: 0.38;
+    transform: translate3d(var(--work-logo-current-end), 0) scaleX(0.82);
+  }
+  100% {
+    opacity: 0.28;
+    transform: translate3d(-2px, 0.5px, 0) scaleX(0.66);
+  }
+}
+
+
+@keyframes ds-work-logo-swell {
+  0% {
+    opacity: 0;
+    transform: translate3d(-5px, 1.5px, 0) scaleX(0.48);
+  }
+  18% {
+    opacity: var(--work-logo-swell-peak-opacity);
+  }
+  52% {
+    opacity: 0.28;
+    transform: translate3d(1px, 0.3px, 0) scaleX(1.08);
+  }
+  100% {
+    opacity: 0;
+    transform: translate3d(8px, 0, 0) scaleX(1.58);
+  }
+}
+
+
+@keyframes ds-work-logo-wave-back {
+  0% {
+    opacity: 0;
+    transform: translate3d(-4px, 1px, 0) scaleX(0.5);
+  }
+  22% {
+    opacity: var(--work-logo-wave-back-peak-opacity);
+  }
+  54% {
+    opacity: 0.32;
+    transform: translate3d(2px, 0.15px, 0) scaleX(1.08);
+  }
+  100% {
+    opacity: 0;
+    transform: translate3d(9px, 0, 0) scaleX(1.46);
+  }
+}
+
+
+@keyframes ds-work-logo-wave-front {
+  0% {
+    opacity: 0;
+    transform: translate3d(-2px, 1px, 0) scaleX(0.44);
+  }
+  16% {
+    opacity: var(--work-logo-wave-front-peak-opacity);
+    transform: translate3d(-0.8px, 0.4px, 0) scaleX(0.82);
+  }
+  42% {
+    opacity: 0.38;
+    transform: translate3d(3.6px, -0.2px, 0) scaleX(1.18);
+  }
+  100% {
+    opacity: 0;
+    transform: translate3d(11px, -0.1px, 0) scaleX(1.48);
+  }
+}
+
+
+@keyframes ds-work-logo-breaker {
+  0%,
+  8% {
+    opacity: 0;
+    transform: translate3d(-1.6px, 1.5px, 0) rotate(-18deg) scale(0.58);
+  }
+  18% {
+    opacity: var(--work-logo-breaker-peak-opacity);
+    transform: translate3d(-0.1px, -1px, 0) rotate(-6deg) scale(1.04);
+  }
+  36% {
+    opacity: 0.42;
+    transform: translate3d(1.6px, -2.1px, 0) rotate(8deg) scale(0.98);
+  }
+  64% {
+    opacity: 0.16;
+    transform: translate3d(4.4px, -2.7px, 0) rotate(18deg) scale(0.75);
+  }
+  100% {
+    opacity: 0;
+    transform: translate3d(6.4px, -3.2px, 0) rotate(28deg) scale(0.45);
+  }
+}
+
+
+@keyframes ds-work-logo-ripple {
+  0% {
+    opacity: 0;
+    transform: translate3d(-3px, 0.8px, 0) scaleX(0.5);
+  }
+  24% {
+    opacity: 0.34;
+  }
+  58% {
+    opacity: 0.16;
+    transform: translate3d(var(--work-logo-ripple-mid), 0.15px, 0) scaleX(0.95);
+  }
+  100% {
+    opacity: 0;
+    transform: translate3d(var(--work-logo-ripple-end), 0, 0) scaleX(1.28);
+  }
+}
+
+
+@keyframes ds-work-logo-crest {
+  0%,
+  9% {
+    opacity: 0;
+    transform: translate3d(-1px, 1.2px, 0) rotate(-12deg) scale(0.64);
+  }
+  21% {
+    opacity: var(--work-logo-crest-peak-opacity);
+    transform: translate3d(0.4px, -1.2px, 0) rotate(-2deg) scale(1.08);
+  }
+  48% {
+    opacity: 0.38;
+    transform: translate3d(3.6px, -2.6px, 0) rotate(16deg) scale(0.94);
+  }
+  100% {
+    opacity: 0;
+    transform: translate3d(6.2px, -4px, 0) rotate(24deg) scale(0.5);
+  }
+}
+
+
+@keyframes ds-work-logo-splash {
+  0%,
+  10% {
+    opacity: 0;
+    transform: translate3d(-1px, 2px, 0) rotate(-14deg) scale(0.68);
+  }
+  22% {
+    opacity: var(--work-logo-splash-peak-opacity);
+    transform: translate3d(0.2px, -1.4px, 0) rotate(2deg) scale(1.08);
+  }
+  52% {
+    opacity: 0.4;
+    transform: translate3d(3.8px, -3.8px, 0) rotate(20deg) scale(0.9);
+  }
+  100% {
+    opacity: 0;
+    transform: translate3d(6.8px, -6.4px, 0) rotate(30deg) scale(0.54);
+  }
+}
+
+
+@keyframes ds-work-logo-spray {
+  0%,
+  18% {
+    opacity: 0;
+    transform: translate3d(-1px, 2px, 0) rotate(-8deg) scale(0.7);
+  }
+  34% {
+    opacity: var(--work-logo-spray-peak-opacity);
+    transform: translate3d(1.2px, -1.5px, 0) rotate(10deg) scale(1);
+  }
+  70% {
+    opacity: 0.22;
+    transform: translate3d(5px, -4.2px, 0) rotate(18deg) scale(0.92);
+  }
+  100% {
+    opacity: 0;
+    transform: translate3d(7.4px, -6.6px, 0) rotate(24deg) scale(0.55);
+  }
+}
+
+
+@keyframes ds-work-logo-wake {
+  0% {
+    opacity: 0;
+    transform: translate3d(0, 1px, 0) scaleX(0.48);
+  }
+  14% {
+    opacity: 0.54;
+    transform: translate3d(1px, 0.5px, 0) scaleX(0.82);
+  }
+  52% {
+    opacity: 0.26;
+    transform: translate3d(var(--work-logo-wake-mid), -0.15px, 0) scaleX(1.4);
+  }
+  100% {
+    opacity: 0;
+    transform: translate3d(var(--work-logo-wake-end), -0.2px, 0) scaleX(1.68);
+  }
+}
+
+
+@keyframes ds-work-logo-foam {
+  0%,
+  10% {
+    opacity: 0;
+    transform: translate3d(1px, 0.8px, 0) rotate(-4deg) scaleX(0.48);
+  }
+  24% {
+    opacity: var(--work-logo-foam-peak-opacity);
+    transform: translate3d(-1.2px, 0.1px, 0) rotate(-8deg) scaleX(0.9);
+  }
+  58% {
+    opacity: 0.22;
+    transform: translate3d(-4.9px, -0.28px, 0) rotate(-11deg) scaleX(1.34);
+  }
+  100% {
+    opacity: 0;
+    transform: translate3d(-8.8px, -0.5px, 0) rotate(-14deg) scaleX(1.58);
+  }
+}
+
+
+@keyframes ds-work-logo-bubbles {
+  0%,
+  12% {
+    opacity: 0;
+    transform: translate3d(0, 2px, 0) scale(0.72);
+  }
+  34% {
+    opacity: 0.52;
+  }
+  78% {
+    opacity: 0.14;
+    transform: translate3d(var(--work-logo-bubble-mid), 0) scale(1);
+  }
+  100% {
+    opacity: 0;
+    transform: translate3d(var(--work-logo-bubble-end), 0) scale(1.06);
+  }
+}
+
+
+@media (prefers-reduced-motion: reduce) {
+
+  .ds-shiny-text,
+  .ds-work-logo,
+  .ds-work-logo::after,
+  .ds-work-logo-body::after,
+  .ds-work-logo-current,
+  .ds-work-logo-gust,
+  .ds-work-logo-swell,
+  .ds-work-logo-wave,
+  .ds-work-logo-breaker,
+  .ds-work-logo-ripple,
+  .ds-work-logo-wake,
+  .ds-work-logo-foam,
+  .ds-work-logo-crest,
+  .ds-work-logo-splash,
+  .ds-work-logo-spray,
+  .ds-work-logo-bubbles,
+  .ds-work-logo-echo,
+  .ds-work-logo-track,
+  .ds-work-logo-body,
+  .ds-work-logo-tail,
+  .ds-work-logo-image,
+  .sdd-draft-shell,
+  .sdd-draft-topbar,
+  .sdd-editor-card,
+  .sdd-editor-progress::after,
+  .sdd-status-pill,
+  .sdd-error-toast,
+  .sdd-assistant-panel,
+  .sdd-assistant-sparkle,
+  .sdd-assistant-timeline,
+  .sdd-assistant-empty-card,
+  .sdd-assistant-action {
+    animation: none;
+  }
+
+
+  .ds-work-logo-current,
+  .ds-work-logo-body::after,
+  .ds-work-logo-gust,
+  .ds-work-logo-swell,
+  .ds-work-logo-wave,
+  .ds-work-logo-breaker,
+  .ds-work-logo-ripple,
+  .ds-work-logo-wake,
+  .ds-work-logo-foam,
+  .ds-work-logo-crest,
+  .ds-work-logo-splash,
+  .ds-work-logo-spray,
+  .ds-work-logo-bubbles,
+  .ds-work-logo-echo,
+  .ds-work-logo-tail {
+    opacity: 0;
+    transform: none;
+  }
+
+
+  .ds-work-logo::after {
+    opacity: 0.24;
+    transform: translateY(3px) scaleX(0.72);
+  }
+
+
+  .ds-work-logo-track,
+  .ds-work-logo-body,
+  .ds-work-logo-image,
+  .sdd-draft-topbar,
+  .sdd-editor-card,
+  .sdd-status-pill,
+  .sdd-assistant-panel,
+  .sdd-assistant-sparkle,
+  .sdd-assistant-empty-card,
+  .sdd-assistant-action {
+    transform: none;
+  }
+
+
+  .ds-work-logo-swell,
+  .ds-work-logo-gust,
+  .ds-work-logo-wave,
+  .ds-work-logo-breaker,
+  .ds-work-logo-crest,
+  .ds-work-logo-splash,
+  .ds-work-logo-spray,
+  .ds-work-logo-foam,
+  .ds-work-logo-bubbles {
+    scale: none;
+  }
+
+
+  .ds-work-logo.is-active .ds-work-logo-image {
+    clip-path: none;
+  }
+}
+
+
+.ds-runtime-wake-logo.ds-work-logo {
+  --work-logo-duration: 1.9s;
+  --work-logo-body-duration: 0.96s;
+  --work-logo-tail-duration: 0.48s;
+  --work-logo-effect-scale: 1.2;
+  --work-logo-swell-peak-opacity: 0.56;
+  --work-logo-wave-back-peak-opacity: 0.68;
+  --work-logo-wave-front-peak-opacity: 0.82;
+  --work-logo-breaker-peak-opacity: 0.88;
+  --work-logo-crest-peak-opacity: 0.9;
+  --work-logo-splash-peak-opacity: 0.86;
+  --work-logo-spray-peak-opacity: 0.8;
+  --work-logo-gust-peak-opacity: 0.62;
+  --work-logo-foam-peak-opacity: 0.62;
+  --work-logo-waterline-peak-opacity: 0.86;
+  --work-logo-water: rgba(77, 107, 254, 0.32);
+  --work-logo-water-soft: rgba(77, 107, 254, 0.18);
+  --work-logo-wave-crest: rgba(77, 107, 254, 0.32);
+  --work-logo-splash-strong: rgba(77, 107, 254, 0.56);
+  --work-logo-wake-mid: 9px, 0.5px;
+  --work-logo-wake-end: 13px, 0;
+  --work-logo-ripple-mid: 4px, 0.2px;
+  --work-logo-ripple-end: 12px, 0;
+  transform: translateZ(0) scale(2.12);
+  z-index: 2;
+}
+
+
+[data-theme='dark'] .ds-runtime-wake-logo.ds-work-logo {
+  --work-logo-wave-foam: rgba(239, 246, 255, 0.78);
+  --work-logo-glow: rgba(135, 170, 255, 0.38);
+  --work-logo-echo-glow: rgba(135, 170, 255, 0.24);
+}

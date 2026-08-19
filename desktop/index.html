@@ -1,0 +1,31 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <link rel="stylesheet" href="work-logo.css">
+  <link rel="stylesheet" href="pet.css">
+  <title>whale-pet</title>
+</head>
+<body>
+  <div id="stage" class="pet-stage state-offline">
+    <span id="logo" class="ds-work-logo ds-work-logo-md"></span>
+    <div id="status" class="pet-status no-drag"><span id="dot" class="pet-dot"></span><span id="statusText">连接中…</span></div>
+    <div id="settings" class="pet-settings no-drag hidden">
+      <button id="settingsClose" class="close" title="关闭">✕</button>
+      <div class="title">鲸鱼大小</div>
+      <div class="row">
+        <input type="range" id="zoomSlider" min="1" max="10" step="0.5">
+        <span class="val" id="zoomValue">5×</span>
+      </div>
+      <div class="hint">拖动调整鲸鱼缩放（zoom）</div>
+    </div>
+    <div id="menu" class="pet-menu no-drag hidden">
+      <button data-act="topmost">置顶窗口</button>
+      <button data-act="size-s">小</button>
+      <button data-act="size-l">大</button>
+      <button data-act="quit">退出</button>
+    </div>
+  </div>
+  <script src="pet.js"></script>
+</body>
+</html>

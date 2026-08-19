@@ -1,0 +1,17 @@
+{
+  "name": "@deepseek-ai/ds-whale-pet",
+  "description": "DS Whale Pet: a transparent always-on-top desktop whale (QQ-pet style) launched by the harness host side, reacting to the agent state (idle/thinking/tool/working/done) via event streams (DeepSeek Harness mux / OpenCode)",
+  "version": "0.1.0",
+  "type": "module",
+  "main": "adapters/deepseek-harness/index.js",
+  "exports": {
+    ".": {
+      "default": "./adapters/deepseek-harness/index.js"
+    },
+    "./package.json": "./package.json"
+  },
+  "license": "MIT",
+  "peerDependencies": {
+    "@deepseek-ai/cordis": "^4.0.1"
+  }
+}

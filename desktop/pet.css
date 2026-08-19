@@ -1,0 +1,124 @@
+/* ---- whale-pet additions on top of the extracted ds-work-logo animation CSS ---- */
+html, body {
+  margin: 0; padding: 0;
+  background: transparent;
+  overflow: hidden;
+  user-select: none;
+  cursor: default;
+}
+.pet-stage {
+  -webkit-app-region: drag;
+  position: relative;
+  width: 100vw; height: 100vh;
+  box-sizing: border-box;
+  display: flex; flex-direction: column;
+  align-items: center; justify-content: flex-end;
+  gap: 8px;
+  padding-bottom: 12px;
+  background: transparent;
+}
+#logo {
+  /* 不设宽高：由原版 .ds-work-logo-md 规则决定（26x18），zoom 放大到 5 倍
+     （130x90 视觉），浪花跟着等比放大 */
+  zoom: 5;
+}
+/* 动画外观完全遵循原版（work-logo.css）：阴影、裁切、关键帧都不做任何覆盖 */
+.no-drag { -webkit-app-region: no-drag; }
+
+/* --- 设置面板 --- */
+.pet-settings {
+  position: absolute;
+  right: 12px;
+  bottom: 96px;
+  width: 200px;
+  padding: 10px 12px;
+  border-radius: 12px;
+  background: rgba(24, 26, 48, 0.95);
+  border: 1px solid rgba(129, 140, 248, 0.35);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
+  z-index: 30;
+  font: 12px/1.5 "Segoe UI", "Microsoft YaHei", sans-serif;
+  color: #e6e9ff;
+}
+.pet-settings .close {
+  position: absolute; top: 6px; right: 8px;
+  border: 0; background: none; color: #8b90b0; cursor: pointer; font-size: 14px;
+}
+.pet-settings .close:hover { color: #fff; }
+.pet-settings .title { font-weight: 600; margin-bottom: 6px; }
+.pet-settings .row { display: flex; align-items: center; gap: 8px; }
+.pet-settings .row input[type=range] { flex: 1; accent-color: #4d6bfe; }
+.pet-settings .val { width: 42px; text-align: right; color: #fff; font-family: ui-monospace, Consolas, monospace; }
+.pet-settings .hint { margin-top: 4px; font-size: 11px; color: #8b90b0; }
+.pet-settings.hidden { display: none; }
+
+/* --- status pill（流式排在鲸鱼下方，gap 分隔，不会重叠）--- */
+.pet-status {
+  position: static;
+  display: flex; align-items: center; gap: 6px;
+  max-width: 220px;
+  padding: 4px 12px;
+  border-radius: 999px;
+  background: rgba(20, 22, 40, 0.72);
+  color: #e6e9ff;
+  font: 12px/1.4 "Segoe UI", "Microsoft YaHei", sans-serif;
+  white-space: nowrap; overflow: hidden; text-overflow: ellipsis;
+  backdrop-filter: blur(4px);
+  /* 悬停只变颜色，边框和尺寸保持不变，避免跳动 */
+  border: 1px solid transparent;
+}
+.pet-status:hover { background: rgba(40, 44, 78, 0.85); border-color: rgba(129, 140, 248, 0.45); }
+.pet-dot { width: 8px; height: 8px; border-radius: 50%; background: #888; flex: 0 0 auto; }
+.state-offline    .pet-dot { background: #f87171; }
+.state-idle       .pet-dot { background: #4ade80; }
+.state-thinking   .pet-dot { background: #fbbf24; animation: pet-pulse 1s ease-in-out infinite; }
+.state-tool       .pet-dot { background: #60a5fa; animation: pet-pulse 1s ease-in-out infinite; }
+.state-working    .pet-dot { background: #818cf8; animation: pet-pulse 1s ease-in-out infinite; }
+.state-done       .pet-dot { background: #4ade80; }
+.state-approval   .pet-dot { background: #f472b6; animation: pet-pulse 1s ease-in-out infinite; }
+@keyframes pet-pulse { 50% { opacity: 0.35; } }
+
+/* --- idle: whale visible, gentle bob (tail piece hidden to avoid the clip seam) --- */
+.pet-stage.state-idle .ds-work-logo-image { animation: pet-bob 3.4s ease-in-out infinite alternate; }
+.pet-stage.state-idle .ds-work-logo-tail  { opacity: 0; }
+.pet-stage.state-idle .ds-work-logo-echo  { opacity: 0.18; animation: pet-echo-bob 4.2s ease-in-out infinite alternate; }
+@keyframes pet-bob  { from { transform: translateY(1px) rotate(-1deg); } to { transform: translateY(-5px) rotate(1.6deg); } }
+@keyframes pet-echo-bob { from { transform: translateY(2px) rotate(-4deg) scale(0.98); } to { transform: translateY(-3px) rotate(-4deg) scale(0.98); } }
+
+/* --- thinking: bubbles faster --- */
+.pet-stage.state-thinking .ds-work-logo-bubbles { animation-duration: 1.15s; }
+
+/* --- done: one jump before falling back to idle --- */
+.pet-stage.state-done .ds-work-logo-track { animation: pet-jump 0.9s cubic-bezier(0.3, 0.6, 0.4, 1) 1; }
+@keyframes pet-jump {
+  0%, 100% { transform: translateY(0); }
+  32% { transform: translateY(-36px) rotate(-2deg); }
+  58% { transform: translateY(0) scaleY(1.1) scaleX(0.96); }
+  74% { transform: translateY(-8px); }
+}
+
+/* --- click: bubble pop --- */
+#logo.pop .ds-work-logo-track { animation: pet-pop 0.65s ease-out 1; }
+@keyframes pet-pop {
+  0% { transform: scale(1); }
+  35% { transform: scale(1.18) rotate(2deg); }
+  100% { transform: scale(1); }
+}
+
+/* --- context menu --- */
+.pet-menu {
+  position: absolute; right: 6px; top: 6px;
+  display: flex; flex-direction: column;
+  padding: 4px;
+  border-radius: 10px;
+  background: rgba(24, 26, 48, 0.92);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.35);
+  z-index: 10;
+}
+.pet-menu.hidden { display: none; }
+.pet-menu button {
+  border: 0; background: transparent; color: #e6e9ff;
+  font: 12px/1.4 "Segoe UI", "Microsoft YaHei", sans-serif;
+  padding: 6px 18px; border-radius: 7px; text-align: left;
+}
+.pet-menu button:hover { background: rgba(129, 140, 248, 0.28); }

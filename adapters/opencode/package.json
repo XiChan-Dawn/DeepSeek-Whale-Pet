@@ -1,0 +1,11 @@
+{
+  "name": "ds-whale-pet-opencode",
+  "description": "OpenCode adapter for the DS Whale Pet desktop pet: forwards OpenCode session events to the always-on-top whale",
+  "version": "0.1.0",
+  "type": "module",
+  "main": "index.js",
+  "exports": {
+    ".": "./index.js"
+  },
+  "license": "MIT"
+}

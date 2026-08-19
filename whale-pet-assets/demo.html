@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <title>Whale Pet Assets — Demo</title>
+  <link rel="stylesheet" href="work-logo.css">
+  <style>
+    body { margin: 0; min-height: 100vh; display: flex; flex-direction: column;
+           align-items: center; justify-content: center; gap: 24px; background: #0e1020; }
+    #logo { width: 240px; height: 190px; }
+    .controls { display: flex; gap: 12px; }
+    button { padding: 8px 20px; border: 0; border-radius: 8px; cursor: pointer;
+             font: 14px "Segoe UI", "Microsoft YaHei", sans-serif; }
+    .swim-btn { background: #4d6bfe; color: #fff; }
+    .idle-btn { background: #2a2e4a; color: #cfd4ff; }
+    .note { color: #8b90b0; font: 13px "Segoe UI", "Microsoft YaHei", sans-serif; }
+  </style>
+</head>
+<body>
+  <span id="logo" class="ds-work-logo ds-work-logo-md"></span>
+  <div class="controls">
+    <button class="swim-btn" id="swimBtn">游泳（工作）</button>
+    <button class="idle-btn" id="idleBtn">待机（idle）</button>
+  </div>
+  <div class="note">非 .is-active = 鲸鱼静态可见（可自己加 idle 动画）；.is-active = 完整 19 层游泳动画</div>
+
+  <script>
+    // 与 DeepSeek GUI 中 AnimatedWorkLogo 完全相同的图层结构
+    const logo = document.getElementById('logo');
+    logo.innerHTML =
+      ['gust', 'current', 'swell', 'wave wave-back', 'ripple', 'wave wave-front', 'breaker',
+       'wake', 'foam', 'crest', 'splash', 'spray', 'bubbles']
+        .map((c) => `<span class="ds-work-logo-${c}"></span>`).join('') +
+      '<img class="ds-work-logo-echo" src="whale.svg" alt="" draggable="false">' +
+      '<span class="ds-work-logo-track"><span class="ds-work-logo-body">' +
+      '<img class="ds-work-logo-image" src="whale.svg" alt="" draggable="false">' +
+      '<img class="ds-work-logo-tail" src="whale.svg" alt="" draggable="false">' +
+      '</span></span>';
+
+    document.getElementById('swimBtn').onclick = () => logo.classList.add('is-active');
+    document.getElementById('idleBtn').onclick = () => logo.classList.remove('is-active');
+  </script>
+</body>
+</html>

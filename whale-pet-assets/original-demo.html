@@ -1,0 +1,67 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <title>鲸鱼原版还原 — 看"正常"的样子</title>
+  <link rel="stylesheet" href="work-logo.css">
+  <style>
+    body { margin: 0; min-height: 100vh; display: flex; flex-direction: column;
+           align-items: center; justify-content: center; gap: 20px;
+           background: radial-gradient(120% 120% at 20% 0%, #1c2140 0%, #12152a 55%, #0d0f1f 100%);
+           color: #cfd4ff; font: 13px/1.6 "Segoe UI", "Microsoft YaHei", sans-serif; }
+    /* 原版：.ds-work-logo 不设尺寸，由 SVG 固有尺寸决定盒子大小 */
+    #logo { }
+    .controls { display: flex; gap: 12px; }
+    button { padding: 8px 20px; border: 0; border-radius: 8px; cursor: pointer;
+             font: 14px "Segoe UI", "Microsoft YaHei", sans-serif; }
+    .swim-btn { background: #4d6bfe; color: #fff; }
+    .idle-btn { background: #2a2e4a; color: #cfd4ff; }
+    #readout {
+      font: 12px/1.7 ui-monospace, Consolas, monospace;
+      background: rgba(20, 22, 48, 0.72);
+      border: 1px solid rgba(129, 140, 248, 0.28);
+      border-radius: 10px; padding: 8px 14px; white-space: pre;
+    }
+  </style>
+</head>
+<body>
+  <span id="logo" class="ds-work-logo ds-work-logo-md"></span>
+  <div class="controls">
+    <button class="swim-btn" id="swimBtn">游泳（is-active）</button>
+    <button class="idle-btn" id="idleBtn">待机（idle）</button>
+  </div>
+  <div id="readout">测量中…</div>
+
+  <script>
+    // 与 DeepSeek GUI 中 AnimatedWorkLogo 完全相同的平铺图层结构
+    const logo = document.getElementById('logo');
+    logo.innerHTML =
+      ['gust', 'current', 'swell', 'wave wave-back', 'ripple', 'wave wave-front', 'breaker',
+       'wake', 'foam', 'crest', 'splash', 'spray', 'bubbles']
+        .map((c) => `<span class="ds-work-logo-${c}"></span>`).join('') +
+      '<img class="ds-work-logo-echo" src="whale.svg" alt="" draggable="false">' +
+      '<span class="ds-work-logo-track"><span class="ds-work-logo-body">' +
+      '<img class="ds-work-logo-image" src="whale.svg" alt="" draggable="false">' +
+      '<img class="ds-work-logo-tail" src="whale.svg" alt="" draggable="false">' +
+      '</span></span>';
+
+    document.getElementById('swimBtn').onclick = () => logo.classList.add('is-active');
+    document.getElementById('idleBtn').onclick = () => logo.classList.remove('is-active');
+
+    // 测量真实尺寸：logo 盒子 + 鲸鱼图片固有/渲染尺寸
+    function measure() {
+      const r = logo.getBoundingClientRect();
+      const img = logo.querySelector('.ds-work-logo-image');
+      const out = [
+        'logo 盒子: ' + Math.round(r.width) + ' × ' + Math.round(r.height) + ' px',
+        '鲸鱼图片: 固有 ' + img.naturalWidth + ' × ' + img.naturalHeight,
+        '         渲染 ' + Math.round(img.getBoundingClientRect().width) + ' × ' + Math.round(img.getBoundingClientRect().height),
+        '（这就是原版"正常"的默认大小；swim 可看浪花）'
+      ].join('\n');
+      document.getElementById('readout').textContent = out;
+    }
+    window.addEventListener('load', () => setTimeout(measure, 200));
+    window.addEventListener('resize', measure);
+  </script>
+</body>
+</html>

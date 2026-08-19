@@ -1,0 +1,7 @@
+{
+  "name": "whale-pet",
+  "productName": "Whale Pet",
+  "version": "1.0.0",
+  "description": "DeepSeek whale desktop pet that reacts to the DeepSeek Harness agent state",
+  "main": "main.js"
+}

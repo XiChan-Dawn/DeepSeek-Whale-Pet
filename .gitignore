@@ -1,0 +1,7 @@
+# Electron runtime is an npm dependency: node_modules/electron/dist.
+# node_modules is never committed.
+node_modules/
+
+# runtime logs
+*.log
+pet-state.log
