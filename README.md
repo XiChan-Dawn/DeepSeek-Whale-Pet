@@ -57,8 +57,11 @@ dsh --profile web
 ## OpenCode 安装
 
 ```bash
-# 安装适配插件（指向本仓库的 opencode 目录；也可把该目录单独发 npm/git 包）
-opencode plugin add <whale-pet-plugin>/adapters/opencode
+# 1. 克隆仓库（或直接下载源码）
+git clone https://github.com/XiChan-Dawn/DeepSeek-Whale-Pet.git
+
+# 2. 安装 OpenCode 适配插件（指向本仓库的 adapters/opencode 目录；也可把该目录单独发 npm/git 包）
+opencode plugin add DeepSeek-Whale-Pet/adapters/opencode
 ```
 
 插件加载时会自动拉起桌面宠物并订阅 OpenCode 事件总线，无需其它配置。事件映射：
@@ -84,7 +87,7 @@ dsh plugin --profile web remove @deepseek-ai/ds-whale-pet
 ## 目录结构
 
 ```
-whale-pet-plugin/            # 包里只有宠物本身（~1.5MB），零依赖
+DeepSeek-Whale-Pet/          # 包里只有宠物本身（~1.5MB），零依赖
 ├── adapters/             # 各 harness 适配器（与 desktop 平级，新增适配都放这里）
 │   ├── deepseek-harness/ # DeepSeek Harness 适配（Cordis 插件，拉起宠物）
 │   └── opencode/         # OpenCode 适配插件（订阅事件 → 推送宠物）
