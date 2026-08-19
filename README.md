@@ -41,7 +41,7 @@ npm i -g electron
 
 ```powershell
 # 1. 安装插件（git 地址，无空格问题；不会自动下载任何依赖）
-dsh plugin --profile web add https://github.com/<你的用户名>/<仓库名>.git
+dsh plugin --profile web add https://github.com/XiChan-Dawn/DeepSeek-Whale-Pet.git
 
 # 2. 启用（一次性，加到 ~/.dsh/profiles/web/cordis.patch.yml）
 #    - insert:
